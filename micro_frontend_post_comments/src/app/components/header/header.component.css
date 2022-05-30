@@ -1,0 +1,25 @@
+.header,
+h1 {
+  margin-left: 5%;
+}
+
+.button {
+  margin-right: 17%;
+  margin-top: -37px;
+}
+
+.button2 {
+  margin-top: -37px;
+  margin-right: 21%;
+}
+
+.user {
+  margin-right: 20%;
+  margin-top: -28px;
+  font-size: large;
+  color: white;
+}
+.button3 {
+  margin-top: -37px;
+  margin-right: -23%;
+}

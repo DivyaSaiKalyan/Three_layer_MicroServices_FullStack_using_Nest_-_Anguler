@@ -1,0 +1,55 @@
+<header>
+  <div class="bg-success">
+    <div class="header p-3">
+      <h1 class="text-white d-inline">MicroServices Appliaction</h1>
+      <div *ngIf="!loginMessage; &quot;login success&quot;">
+        <a routerLink="loginPage">
+          <input
+            type="button"
+            class="btn btn-sm btn-light d-inline float-end button"
+            value="login"
+            (click)="onToggleLogin()"
+          />
+        </a>
+        <a routerLink="registerPage">
+          <input
+            type="button"
+            class="btn btn-sm btn-light d-inline float-end button2"
+            value="Register"
+            (click)="onToggleRegister()"
+          />
+        </a>
+      </div>
+      <div *ngIf="loginMessage; &quot;login success&quot;">
+        <p class="d-inline float-end user">{{ loginUserName }}</p>
+        <a routerLink="loginPage">
+          <input
+            type="button"
+            value="Logout"
+            class="btn btn-sm btn-light d-inline float-end button3"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
+<div>
+  <div *ngIf="!loginMessage; &quot;login success&quot;">
+    <app-login-page
+      *ngIf="loginRegistration"
+      (onUserLogin)="loginData($event)"
+    ></app-login-page>
+  </div>
+  <div *ngIf="loginErrorMessage; &quot;invalid credintails&quot;">
+    <h4 class="text-center text-danger">
+      {{ loginErrorMessage }}
+    </h4>
+  </div>
+  <app-register-page
+    *ngIf="!loginRegistration"
+    (onSubmitNewRegistration)="newReg($event)"
+  ></app-register-page>
+  <app-dashboard
+    *ngIf="loginMessage; &quot;login success&quot;"
+  ></app-dashboard>
+</div>

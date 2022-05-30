@@ -1,0 +1,68 @@
+<div class="container col col-5 mt-5">
+  <h3 class="text-center">Registration</h3>
+  <form [formGroup]="registrationForm" (ngSubmit)="onSubmitRegForm()">
+    <label>Name</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="enter your name"
+      name="name"
+      formControlName="name"
+    />
+    <span *ngIf="name && name.invalid && name.touched">name is required</span
+    ><br />
+    <label>Email Id</label>
+    <input
+      type="email"
+      class="form-control"
+      placeholder="enter your email"
+      name="email"
+      formControlName="email"
+    />
+    <span *ngIf="email && email.invalid && email.touched"
+      >email is required</span
+    ><br />
+    <label>Mobile Number</label>
+    <input
+      type="text"
+      class="form-control"
+      placeholder="enter your mobilenumber"
+      name="mobilenumber"
+      formControlName="mobilenumber"
+    />
+    <span *ngIf="mobilenumber && mobilenumber.invalid && mobilenumber.touched"
+      >mobilenumber is required and lenght should be 10</span
+    ><br />
+    <label>password</label>
+    <input
+      type="password"
+      class="form-control"
+      placeholder="enter your password"
+      name="password"
+      formControlName="password"
+    />
+    <span *ngIf="password && password.invalid && password.touched"
+      >min length of the password is 5 charecters</span
+    ><br />
+    <label>Reenter password</label>
+    <input
+      type="password"
+      class="form-control"
+      placeholder="enter your password"
+      name="reenterpassword"
+      formControlName="reenterpassword"
+    />
+    <span
+      *ngIf="
+        reenterpassword && reenterpassword.invalid && reenterpassword.touched
+      "
+      >password and reEnter password length should be same</span
+    ><br />
+    <input
+      type="submit"
+      class="btn btn-sm btn-success mt-3"
+      value="Submit"
+      [disabled]="button()"
+    />
+  </form>
+</div>
