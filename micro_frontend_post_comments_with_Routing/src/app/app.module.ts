@@ -11,6 +11,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     CreatePostComponent,
     HeaderComponent,
     FooterComponent,
+    LandingpageComponent,
   ],
   imports: [
     BrowserModule,
